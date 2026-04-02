@@ -6,7 +6,6 @@ import CategoryChart from "../Components/Dashboard/CategoryChart";
 import Insight from "../Components/Insights/Insight";
 
 
-
 const DashboardPage = () => {
   return (
     <div className='p-6 space-y-6'>
