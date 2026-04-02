@@ -1,8 +1,10 @@
-
-import TransactionItem from "./TransactionItem";
-import TransactionFilter from "./TransactionFilter";
+;
 import { useState } from "react";
 import { useApp } from "../../Context/AppContext";
+import TransactionFilter from "./TransactionFilter";
+import TransactionItem from "./TransactionItem";
+
+
 
 const TransactionList = () => {
   const { transactions, filter, role, setTransactions } = useApp();
@@ -32,10 +34,7 @@ const TransactionList = () => {
 
   return (
     <div className="space-y-4">
-      {/* Filter */}
-      <TransactionFilter />
-
-      {/* Admin Add Form */}
+      <TransactionFilter/>
       {role === "admin" && (
         <div className="flex gap-2 flex-wrap">
           <input
@@ -78,11 +77,12 @@ const TransactionList = () => {
         </div>
       )}
 
-      {/* Transactions */}
+  
       <div className="space-y-2">
         {filteredData.length > 0 ? (
           filteredData.map((t) => (
-            <TransactionItem key={t.id} transaction={t} />
+               <TransactionItem key={t.id} transaction={t}/>
+       
           ))
         ) : (
           <p>No Transactions Found</p>

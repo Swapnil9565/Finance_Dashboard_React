@@ -18,7 +18,7 @@ const Insights = () => {
   );
 
   return (
-    <div className="bg-white p-4 rounded-xl shadow">
+    <div className="bg-blue-900 text-white p-4 rounded-xl shadow">
       <h2 className="font-semibold mb-2">Insights</h2>
 
       {highestCategory ? (

@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { transactions as initialData } from "../data/DummyData";
+import { transactions as initialData } from "../Data/TransactionData";
 
 const AppContext = createContext();
 
