@@ -1,9 +1,17 @@
-import React from 'react'
+import { useApp } from "../../Context/AppContext";
 
 const TransactionFilter = () => {
-  return (
-    <div>TransactionFilter</div>
-  )
-}
+  const { filter, setFilter } =useApp();
 
-export default TransactionFilter
+  return (
+    <input
+      type="text"
+      placeholder="Search category..."
+      value={filter}
+      onChange={(e) => setFilter(e.target.value)}
+      className="border p-2 rounded-md w-full md:w-1/3"
+    />
+  );
+};
+
+export default TransactionFilter;

@@ -1,9 +1,18 @@
-import React from 'react'
+import { useApp } from "../../Context/AppContext";
 
 const RoleSwitcher = () => {
-  return (
-    <div>RoleSwitcher</div>
-  )
-}
+  const { role, setRole } = useApp();
 
-export default RoleSwitcher
+  return (
+    <select
+      value={role}
+      onChange={(e) => setRole(e.target.value)}
+      className="border px-3 py-1 rounded-md"
+    >
+      <option value="viewer">Viewer</option>
+      <option value="admin">Admin</option>
+    </select>
+  );
+};
+
+export default RoleSwitcher;

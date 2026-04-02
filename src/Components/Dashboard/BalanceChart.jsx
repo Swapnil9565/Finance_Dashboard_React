@@ -1,9 +1,27 @@
-import React from 'react'
+import { useApp } from "../../Context/AppContext";
+
 
 const BalanceChart = () => {
-  return (
-    <div>BalanceChart</div>
-  )
-}
+  const { transactions } =useApp();
 
-export default BalanceChart
+  const income = transactions
+    .filter((t) => t.type === "income")
+    .reduce((a, b) => a + b.amount, 0);
+
+  const expenses = transactions
+    .filter((t) => t.type === "expense")
+    .reduce((a, b) => a + b.amount, 0);
+
+  return (
+    <div className="bg-white p-4 rounded-xl shadow">
+      <h2 className="font-semibold mb-2">Balance Overview</h2>
+
+      <div className="space-y-2">
+        <div className="bg-green-200 h-4 rounded" style={{ width: `${income / 100}%` }} />
+        <div className="bg-red-200 h-4 rounded" style={{ width: `${expenses / 100}%` }} />
+      </div>
+    </div>
+  );
+};
+
+export default BalanceChart;
