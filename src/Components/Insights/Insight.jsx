@@ -1,6 +1,6 @@
 import { useApp } from "../../Context/AppContext";
 
-const Insights = () => {
+const Insight = () => {
   const { transactions } = useApp();
 
   const expenses = transactions.filter((t) => t.type === "expense");
@@ -33,4 +33,4 @@ const Insights = () => {
   );
 };
 
-export default Insights;
+export default Insight;

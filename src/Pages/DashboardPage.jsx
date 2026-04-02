@@ -1,9 +1,11 @@
 import SummaryCard from "../Components/Dashboard/SummaryCard";
 import TransactionList from "../Components/Transactions/TransactionList";
 import RoleSwitcher from "../Components/Role/RoleSwitcher";
-import Insights from "../Components/Insights/insights";
 import BalanceChart from "../Components/Dashboard/BalanceChart";
 import CategoryChart from "../Components/Dashboard/CategoryChart";
+import Insight from "../Components/Insights/Insight";
+
+
 
 const DashboardPage = () => {
   return (
@@ -27,7 +29,7 @@ const DashboardPage = () => {
       </div>
 
       <TransactionList />
-      <Insights />
+      <Insight/>
     </div>
   );
 };
